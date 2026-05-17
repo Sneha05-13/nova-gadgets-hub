@@ -14,7 +14,7 @@ export const Route = createFileRoute("/products/$id")({
 });
 
 function ProductDetail() {
-  const product = Route.useLoaderData();
+  const product = Route.useLoaderData() as Product;
   const related = products.filter((p) => p.id !== product.id).slice(0, 4);
 
   return (
